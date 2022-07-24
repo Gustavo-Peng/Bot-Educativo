@@ -3,12 +3,12 @@ import path from 'path'
 
 let handler = async (m, { conn }) => {
 if (!db.data.chats[m.chat].audios && m.isGroup) throw 0
-let vn = './media/Yamete-kudasai.mp3'
-conn.sendFile(m.chat, vn, 'Yamete-kudasai.mp3', null, m, true, {
+let vn = './media/Nico-nico.mp3'
+conn.sendFile(m.chat, vn, 'Nico-nico.mp3', null, m, true, {
 type: 'audioMessage', 
-ptt: true
+ptt: true 
 })
 }
-handler.customPrefix = /Yamete|yamete|Yamete kudasai|yamete kudasai/
+handler.customPrefix = /Nico nico|nico nico|Niko Niko|Niko niko|niko niko|nico|niko|Niko|nico|Nico/
 handler.command = new RegExp
 export default handler

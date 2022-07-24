@@ -1,4 +1,4 @@
-import { smsg } from './lib/simple.js'
+﻿import { smsg } from './lib/simple.js'
 import { format } from 'util'
 import { fileURLToPath } from 'url'
 import path, { join } from 'path'
@@ -614,7 +614,7 @@ export async function handler(chatUpdate) {
         if (opts['autoread'])
             await this.readMessages([m.key])
         
-        if (!m.fromMem && m.text.match(/(Bruno Sobrino|@5219996125657|bot|mystic|the mystic - bot|mystic - bot|themystic-bot)/gi)) {
+        if (!m.fromMem && m.text.match(/(Gustavo Bots|@573017901707|bot|educatvo|bot - educativo|bot - educativo|bot-educativo)/gi)) {
         let emot = pickRandom(["🎃", "❤", "😘", "😍", "💕", "😎", "🙌", "⭐", "👻", "🔥"])
         this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
         function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}

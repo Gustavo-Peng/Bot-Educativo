@@ -1,4 +1,4 @@
-import { xpRange } from '../lib/levelling.js'
+﻿import { xpRange } from '../lib/levelling.js'
 const { levelling } = '../lib/levelling.js'
 import PhoneNumber from 'awesome-phonenumber'
 import { promises } from 'fs'
@@ -393,6 +393,13 @@ _(𝑢𝑠𝑜 𝑠𝑖𝑛 𝑝𝑟𝑒𝑓𝑖𝑗𝑜)_
 ° ඬ⃟🔊 _Bañate_
 ° ඬ⃟🔊 _Es puto_
 ° ඬ⃟🔊 _La biblia_
+° ඬ⃟🔊 _Pajero_
+° ඬ⃟🔊 _Pajin_
+° ඬ⃟🔊 _Kawai_
+° ඬ⃟🔊 _Nico nico_
+° ඬ⃟🔊 _Norteños_
+° ඬ⃟🔊 _no chupala_
+° ඬ⃟🔊 _Calzones_
 ° ඬ⃟🔊 _Onichan_
 ° ඬ⃟🔊 _Mierda de Bot_
 ° ඬ⃟🔊 _Siuuu_
@@ -484,7 +491,7 @@ _(𝑢𝑠𝑜 𝑠𝑖𝑛 𝑝𝑟𝑒𝑓𝑖𝑗𝑜)_
 ° ඬ⃟👑 _${usedPrefix}delprem *<@tag>*_
 ° ඬ⃟👑 _${usedPrefix}listprem_
 `.trim()
-conn.sendHydrated2(m.chat, str, wm, pp, 'https://www.paypal.me/TheShadowBrokers133', '𝙿𝙰𝚈𝙿𝙰𝙻', 'https://github.com/BrunoSobrino/TheMystic-Bot-MD', '𝙶𝙸𝚃𝙷𝚄𝙱', [
+conn.sendHydrated2(m.chat, str, wm, pp, 'https://www.paypal.me/GGutierrezContreras', '𝙿𝙰𝚈𝙿𝙰𝙻', 'https://github.com/BrunoSobrino/TheMystic-Bot-MD', '𝙶𝙸𝚃𝙷𝚄𝙱', [
 ['📮 𝙳𝙾𝙽𝙰𝚁 📮', '/donasi'],
 ['🌹 𝙾𝚆𝙽𝙴𝚁 🌹', '/owner'],
 ['🐾 𝙸𝙽𝙵𝙾𝙱𝙾𝚃 🐾', '/infobot']

@@ -1,4 +1,4 @@
-const { levelling } = '../lib/levelling.js'
+﻿const { levelling } = '../lib/levelling.js'
 import PhoneNumber from 'awesome-phonenumber'
 let handler = async (m, { conn, usedPrefix }) => {
 let pp = './Menu2.jpg'
@@ -45,6 +45,13 @@ let str = `
 ° ඬ⃟🔊 _Bañate_
 ° ඬ⃟🔊 _Es puto_
 ° ඬ⃟🔊 _La biblia_
+° ඬ⃟🔊 _No Chupala_
+° ඬ⃟🔊 _Norteños_
+° ඬ⃟🔊 _Niko Niko_
+° ඬ⃟🔊 _Kawai_
+° ඬ⃟🔊 _Miedo_
+° ඬ⃟🔊 _Pajero_
+° ඬ⃟🔊 _Pajin_
 ° ඬ⃟🔊 _Onichan_
 ° ඬ⃟🔊 _Mierda de Bot_
 ° ඬ⃟🔊 _Siuuu_
@@ -53,7 +60,7 @@ let str = `
 ° ඬ⃟🔊 _:c_
 ° ඬ⃟🔊 _a_
 `.trim()
-conn.sendHydrated(m.chat, str, wm, pp, 'https://github.com/BrunoSobrino/TheMystic-Bot-MD', '𝙶𝙸𝚃𝙷𝚄𝙱', null, null, [
+conn.sendHydrated(m.chat, str, wm, pp, 'https://instagram.com/gustavo_smpi', '𝙸𝙽𝚂𝚃𝙰𝙶𝚁𝙰𝙼', null, null, [
 ['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', '/menu']
 ], m)
 }}

@@ -1,4 +1,4 @@
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+﻿process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import './config.js';
 import { createRequire } from "module"; 
 import path, { join } from 'path'
@@ -75,7 +75,7 @@ const connectionOptions = {
 printQRInTerminal: true,
 auth: state,
 logger: P({ level: 'silent'}),
-browser: ['TheMystic-Bot','Edge','1.0.0'],
+browser: ['Bot - Educativo','Edge','1.0.0'],
 msgRetryCounterMap,
 getMessage : async (key) => {
 let remoteJidxd = key.remoteJid.includes(":") ? key.remoteJid.split(":")[0] + "@s.whatsapp.net" : key.remoteJid
