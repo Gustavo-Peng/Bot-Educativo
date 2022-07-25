@@ -7,7 +7,7 @@ let buttonMessage= {
 'mimetype': `application/${document}`,
 'fileName': `「  𝑯𝒆𝒍𝒍𝒐 𝑾𝒐𝒓𝒍𝒅 」`,
 'fileLength': 9,
-'pageCount': 0,
+'pageCount': 00,
 'contextInfo': {
 'forwardingScore': 0,
 'isForwarded': true,
