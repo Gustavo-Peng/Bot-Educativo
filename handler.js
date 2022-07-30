@@ -606,21 +606,6 @@ export async function handler(chatUpdate) {
             }
         }
 
-        try {
-            if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
-        } catch (e) {
-            console.log(m, m.quoted, e)
-        }
-        if (opts['autoread'])
-            await this.readMessages([m.key])
-        
-        if (!m.fromMem && m.text.match(/(Gustavo Bots|@573017901707|bot|educatvo|bot - educativo|bot - educativo|bot-educativo)/gi)) {
-        let emot = pickRandom(["🎃", "❤", "😘", "😍", "💕", "😎", "🙌", "⭐", "👻", "🔥"])
-        this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
-        function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
-    }
-}
-
 /**
  * Handle groups participants update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
@@ -646,50 +631,15 @@ pp = await this.profilePictureUrl(user, 'image')
 } catch (e) {
 } finally {
 text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*𝚂𝙸𝙽 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝙲𝙸𝙾𝙽*') :
-(chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-let apii = await this.getFile(pp)
-const fake = { quoted: {
-key : {
-participant : '0@s.whatsapp.net' },
-message: {
-orderMessage: {
-itemCount : 999999,
-status: 1,
-surface : 1,
-message: wm, 
-orderTitle: 'WaBot',
-thumbnail: imagen2, 
-sellerJid: '0@s.whatsapp.net' }}}}      
-var doc = ['pdf','zip','vnd.openxmlformats-officedocument.presentationml.presentation','vnd.openxmlformats-officedocument.spreadsheetml.sheet','vnd.openxmlformats-officedocument.wordprocessingml.document']
-var document = doc[Math.floor(Math.random() * doc.length)]
-const buttons = [
-{buttonId: (action == 'add' ? '#welcomegc' : '#byegc'), buttonText: {displayText: (action == 'add' ? '💫 𝙱𝙸𝙴𝙽𝚅𝙴𝙽𝙸𝙳𝙾 💫' : '☠ 𝙰𝙳𝙸𝙾𝚂 ☠')}, type: 1},
-{buttonId: `#menu`, buttonText: {displayText: '💟 𝙼𝙴𝙽𝚄 💟'}, type: 1}, ]
-let buttonMessage = {
-document: imagen3, 
-fileName: `ᴇʟ ᴍᴇᴊᴏʀ ʙᴏᴛ ᴅᴇ ᴡʜᴀᴛsᴀᴘᴘ⁩`, 
-mimetype: `application/${document}`,
-jpegThumbnail: imagen3,
-caption: text,
-fileLength: "99999999999999",
-mentions: [user],
-footer: groupMetadata.subject,
-buttons: buttons,
-headerType: 4,   
-contextInfo: {
-'forwardingScore': 200,
-'isForwarded': true,
-"mentionedJid": [user],
-"externalAdReply": {
-"showAdAttribution": false,
-"title": `𝚃𝚄𝚃𝙾𝚁𝙸𝙰𝙻 𝙳𝙴 𝙸𝙽𝚂𝚃𝙰𝙻𝙰𝙲𝙸𝙾𝙽`,
-"mediaType": 2, 
-"previewType": "VIDEO",
-"thumbnail": apii.data,
-"mediaUrl": 'https://youtu.be/eC9TfKICpcY',
-"sourceUrl": 'https://www.pornhub.com' }}} 
-this.sendMessage(id, buttonMessage, fake)                          
-}}}
+                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            let apii = await this.getFile(pp)
+                            this.sendHydrated(id, text, groupMetadata.subject, apii.data, 'https://discord.gg/T53cBc9x', 'DISCORD', null, null, [
+                            [(action == 'add' ? '𝙱𝙸𝙴𝙽𝚅𝙴𝙽𝙸𝙳𝙾' : '𝙰𝙳𝙸𝙾𝚂'), 'ura'],    
+                            ['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', '/menu']
+                            ], '', { mentions: [user]})
+                           }
+                    }
+            }
             break
         case 'promote':
         case 'daradmin':
