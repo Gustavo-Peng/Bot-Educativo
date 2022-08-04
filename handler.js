@@ -1,4 +1,4 @@
-﻿import { smsg } from './lib/simple.js'
+import { smsg } from './lib/simple.js'
 import { format } from 'util'
 import { fileURLToPath } from 'url'
 import path, { join } from 'path'
@@ -272,8 +272,8 @@ export async function handler(chatUpdate) {
                     chat.antiLink = false
                 if (!('antiLink2' in chat))
                     chat.antiLink2 = false
-                if (!('antiviewonce' in chat))
-                    chat.antiviewonce = false
+                if (!('viewonce' in chat))
+                    chat.viewonce = false
                 if (!('antiToxic' in chat))
                     chat.antiToxic = false
                 if (!isNumber(chat.expired))
@@ -293,7 +293,7 @@ export async function handler(chatUpdate) {
                     audios: true,
                     antiLink: false,
                     antiLink2: false,
-                    antiviewonce: false,
+                    viewonce: false,
                     antiToxic: false,
                     expired: 0,
                 }
@@ -606,6 +606,21 @@ export async function handler(chatUpdate) {
             }
         }
 
+        try {
+            if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
+        } catch (e) {
+            console.log(m, m.quoted, e)
+        }
+        if (opts['autoread'])
+            await this.readMessages([m.key])
+        
+        if (!m.fromMem && m.text.match(/(perrocalvo|brunonalgon|pasatunbotupa>:v|sinnombreputo)/gi)) {
+        let emot = pickRandom(["🎃", "❤", "😘", "😍", "💕", "😎", "🙌", "⭐", "👻", "🔥"])
+        this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
+        function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
+    }
+}
+
 /**
 * Handle groups participants update
  * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
@@ -634,7 +649,7 @@ export async function participantsUpdate({ id, participants, action }) {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '*𝚂𝙸𝙽 𝙳𝙴𝚂𝙲𝚁𝙸𝙿𝙲𝙸𝙾𝙽*') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
                             let apii = await this.getFile(pp)
-                            this.sendHydrated(id, text, groupMetadata.subject, apii.data, 'https://github.com/SOFI-BOTS/KOMI-SAN', '𝙶𝙸𝚃𝙷𝚄𝙱', null, null, [
+                            this.sendHydrated(id, text, groupMetadata.subject, apii.data, 'https://discord.gg/T53cBc9x', 'DISCORD', null, null, [
                             [(action == 'add' ? '✨ 𝙱𝙸𝙴𝙽𝚅𝙴𝙽𝙸𝙳𝙾 ✨' : '👀 𝙰𝙳𝙸𝙾𝚂 👀'), 'ura'],    
                             ['𝙼𝙴𝙽𝚄 𝙿𝚁𝙸𝙽𝙲𝙸𝙿𝙰𝙻', '/menu']
                             ], '', { mentions: [user]})
